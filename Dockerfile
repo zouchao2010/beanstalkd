@@ -1,5 +1,10 @@
 FROM debian:jessie
-RUN apt-get update && apt-get install -y beanstalkd && apt-get clean
+RUN apt-get update \
+    && apt-get install -y beanstalkd \
+    && apt-get autoremove -y \
+    && apt-get clean -y \
+    && apt-get autoclean -y \
+    && rm -rf /var/lib/apt/lists/*
 
 VOLUME /var/lib/beanstalkd/data
 
