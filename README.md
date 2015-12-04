@@ -26,6 +26,7 @@ docker run  --name beanstalkd \
 ## run(创建并运行一个容器，以守护进程方式)
 ```shell
 docker run  --name beanstalkd \
+            --restart=always \
             -h beanstalkd \
             -p 11300:11300 \
             -v /data/beanstalkd:/var/lib/beanstalkd/data \
