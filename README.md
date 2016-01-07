@@ -27,6 +27,7 @@ docker run  --name beanstalkd \
 ```shell
 docker run  --name beanstalkd \
             --restart=always \
+            -m 1024m \
             -h beanstalkd \
             -p 11300:11300 \
             -v /data/beanstalkd:/var/lib/beanstalkd/data \
